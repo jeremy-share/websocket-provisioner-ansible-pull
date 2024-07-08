@@ -15,4 +15,4 @@
     - name: Creating a file on the root with some details
       copy:
         dest: "/details.txt"
-        content: "Branch: master.\nTimestamp: {{ ansible_date_time.iso8601 }}"
+        content: "Branch: master.\nTimestamp: {{ ansible_date_time.iso8601 }}.\n"
