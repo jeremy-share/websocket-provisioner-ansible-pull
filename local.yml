@@ -1,0 +1,18 @@
+---
+- name: A quick playbook for testing
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Display some information
+      debug:
+        msg: "The inventory_hostname is {{ inventory_hostname }}"
+
+    - name: Display a message
+      debug:
+        msg: "The message is '{{ message | default('None') }}'"
+
+    - name: Creating a file on the root with some details
+      copy:
+        dest: "/details.txt"
+        content: "Branch: master.\nTimestamp: {{ ansible_date_time.iso8601 }}"
